@@ -190,7 +190,7 @@ fclose($hndf);
 $myht = fopen("../Apps/$paths/.htaccess", "w") or die("Unable to open file!");
 $txt = "RewriteEngine On
 
-RewriteBase  /www/saas/Apps/$paths/
+RewriteBase  /www/UST-Framework-master/Apps/$paths/
 
 RewriteCond %{REQUEST_FILENAME} !-f
 
