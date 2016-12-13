@@ -10,7 +10,7 @@ session_start();
      
         define("BASE_PATH","http://localhost/");
        
-        $path = "www/UST-Framework-master/Apps/".Conf::APP_NAME."/";
+        $path = "/UST-Framework-master/Apps/".Conf::APP_NAME."/";
         
         define("PATH",BASE_PATH.$path);
 
