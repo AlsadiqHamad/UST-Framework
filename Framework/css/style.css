@@ -1,8 +1,12 @@
 #msg1
 {
 width:100px;
-background-color:red;
+background-color:#AED6F1;
 position: relative;
+ margin: auto;
+ text-align: center;
+ top: 60px;
+  font-family: "Times New Roman", Times, serif;
 
 }
 
