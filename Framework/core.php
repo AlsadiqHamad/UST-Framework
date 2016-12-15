@@ -12,7 +12,7 @@ $dbOptions = array(
 
 
 
-require "module/funco.class.php";
+require "module/Builder.class.php";
 require "module/DB.class.php";
 try{
 
@@ -26,11 +26,11 @@ try{
         switch($_GET['action']){
 
                 case 'backbone':
-                        $response = funco::create_app_basic($_POST);
+                        $response = Builder::create_app_basic($_POST);
                 break;
 
 			        	case 'build':
-                        $response = funco::generate_form($_POST);
+                        $response = Builder::generate_form($_POST);
                 break;
 
                

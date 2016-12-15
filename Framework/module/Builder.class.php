@@ -1,7 +1,7 @@
 <?php
 
 
-class funco{
+class Builder{
 
 
 
@@ -57,8 +57,8 @@ DB::query("CREATE TABLE `users` (
     $src="core_temp";
     $dst="../Apps/$appn";
     
-    funco::create_app_folder($appn);//
-    funco::recurse_copy($src, $dst);//
+    Builder::create_app_folder($appn);//
+    Builder::recurse_copy($src, $dst);//
 
 
 
@@ -82,7 +82,7 @@ public static function recurse_copy($src,$dst) {
     while(false !== ( $file = readdir($dir)) ) { 
         if (( $file != '.' ) && ( $file != '..' )) { 
             if ( is_dir($src . '/' . $file) ) { 
-                funco::recurse_copy($src . '/' . $file,$dst . '/' . $file); 
+                Builder::recurse_copy($src . '/' . $file,$dst . '/' . $file); 
             } 
             else { 
                 copy($src . '/' . $file,$dst . '/' . $file); 
