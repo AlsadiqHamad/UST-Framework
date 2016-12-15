@@ -122,7 +122,7 @@ foreach($fields as $field){
 $form='<form name="form1" method="post" action="rbdb.php">';
 $form .=$data;
 $form.='<input type="hidden" value="add" name="add">';
-$form.='<br /><input type="submit" value="send" /></form>';
+$form.='<br /><input type="submit" value="send" class="btn btn-primary" /></form>';
 
 
 $myfile = fopen("../Apps/$paths/form.php", "w") or die("Unable to open file!");
@@ -162,7 +162,7 @@ $form1="<!DOCTYPE html>
 
 $form1.='<form name="form1" method="post" action="../../Framework/make_form.php">';
 $form1 .=$data;
-$form1.='<br /><input type="submit" value="send" /></form>';
+$form1.='<br /><input type="submit" value="Save" class="btn btn-primary" /></form>';
 
 $myfile1 = fopen("../Apps/$paths/generateForm.php", "w") or die("Unable to open file!");
 fwrite($myfile1, $form1);

@@ -88,7 +88,7 @@ header("Location:../Apps/$app");
 <label >User Name :</label><input type="text" name="user" /><br />
 <label >PassWord :</label><input type="pass" name="pass"/>
 <input type="hidden" name="admin" value="admin"/><br />
-<input type="submit" class="btn btn-info" value="Create Admin"/>
+<input type="submit" class="btn btn-primary" value="Create Admin"/>
 </form>
 
 </div>
