@@ -10,16 +10,22 @@ require "module/Builder.class.php";
 require "module/DB.class.php";
 require "db.config.php";
 
+
+class Core{
+
+
+public  function run($cmd,$dbs){
+
 try{
 
     
-        DB::init($dbOptions);
+        DB::init($dbs);
 
         $response = array();
 
         
 
-        switch($_GET['action']){
+        switch($cmd){
 
                 case 'backbone':
                         $response = Builder::create_app_basic($_POST);
@@ -40,5 +46,22 @@ try{
 catch(Exception $e){
         die(json_encode(array('error' => $e->getMessage())));
 }
+
+
+
+
+}//end Function
+
+
+}//End Class
+
+
+
+$pb= new Core;
+
+$pb->run($_GET['action'],$dbOptions);
+
+
+
 
 ?>
