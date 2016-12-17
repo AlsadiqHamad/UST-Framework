@@ -3,17 +3,13 @@ session_name('SaaS_App');
 session_start();
 
 
-$dbOptions = array(
-        'db_host' => 'localhost',
-        'db_user' => 'root',
-        'db_pass' => '',
-        'db_name' => 'coreDB'
-);
 
 
 
 require "module/Builder.class.php";
 require "module/DB.class.php";
+require "db.config.php";
+
 try{
 
     

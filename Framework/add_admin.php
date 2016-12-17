@@ -6,16 +6,17 @@ session_start();
 @$app= $_SESSION['step1']['path'];
 
 require 'module/rb.php';
-
+require 'db.config.php';
 
 
 
 if(isset($_POST['admin']))
 
 {  
- R::setup( "mysql:host=localhost;dbname=$db","root","");    
-    
-$admin = R::dispense( 'admin' );
+
+R::setup( "mysql:host=".$dbOptions['db_host'].";dbname=$db",$dbOptions['db_user'],$dbOptions['db_pass']); 
+  
+$admin = R::dispense('admin');
 
 $admin->user=$_POST['user'];
 $admin->pass=$_POST['pass'];
