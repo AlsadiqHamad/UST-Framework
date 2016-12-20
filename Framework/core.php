@@ -11,7 +11,7 @@ require "module/DB.class.php";
 require "db.config.php";
 
 
-class Core{
+class core{
 
 
 public  function run($cmd,$dbs){
@@ -57,7 +57,7 @@ catch(Exception $e){
 
 
 
-$pb= new Core;
+$pb= new core;
 
 $pb->run($_GET['action'],$dbOptions);
 

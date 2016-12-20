@@ -4,13 +4,13 @@ session_start();
 
 
         require 'system/rb.php';
-        include 'conf.php';
-        $db=conf::DB_NAME;
+      		$xml=simplexml_load_file("config.xml") or die("Error: Cannot create object");
+        $db=$xml->DB_NAME;
 		R::setup( "mysql:host=localhost;dbname=$db","root","");  
      
         define("BASE_PATH","http://localhost/");
        
-        $path = "/UST-Framework-master/Apps/".Conf::APP_NAME."/";
+        $path = "/UST-Framework-master/Apps/".$xml->APP_NAME."/";
         
         define("PATH",BASE_PATH.$path);
 

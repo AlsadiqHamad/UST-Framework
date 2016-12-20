@@ -12,16 +12,13 @@
 			$this->loadView('admin/view_admin_login');
 		}
 
-		 function login()//login admin
+		 function login()
 		 {
 		        $msg ="not login";
 				if(isset($_POST['log']))
 				{
 				$msg = $this->model_admin->check($_POST);
-				
 				}
-
-				
 	          	header('Location:'.PATH.'admin/show');
 		 }
 

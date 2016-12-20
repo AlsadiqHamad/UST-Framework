@@ -9,6 +9,17 @@
 			//initial load
 		}
 		
+function select()
+{
+
+$a= R::findAll('users'); 
+		
+		
+return $a;
+		
+}
+
+		
 		function store($post)
 		{
 				$numr = R::count( 'users' );
@@ -26,13 +37,7 @@
 				return "yes";
 		        
 		}
-		function select()
-		{	
-		 
-	 	$a= R::findAll('users'); 
-		
-		return $a;
-		}
+	
 		function check($post)
 		{
 				$user= $post['user'];

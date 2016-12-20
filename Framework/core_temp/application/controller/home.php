@@ -6,7 +6,7 @@
 			//$this->loadModel('model_admin');
 		}
 		
-		function index()//defult load
+		function index()
 		{
 		
 			$this->loadView('Home');

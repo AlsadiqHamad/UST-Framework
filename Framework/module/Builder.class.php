@@ -171,16 +171,18 @@ fclose($myfile1);
 
 //////////////////write Config class------
 
-$conf="<?php \n class conf {\n \t";
+$conf="<?xml version=\"1.0\" encoding=\"UTF-8\"?>   \n ";
+$conf.="<config>\n\t";
 
-$conf.="const DB_NAME =\"$dbs\";\n\t";
+$conf.="<DB_NAME>$dbs</DB_NAME>\n\t";
 
-$conf.="const APP_NAME =\"$paths\";\n\t";
+$conf.="<APP_NAME>$paths</APP_NAME> \n";
 
-$conf.="}\n".'?>';
+$conf.="</config>";
+
 
 //craeate config file
-$hndf = fopen("../Apps/$paths/conf.php", "w") or die("Unable to open file!");
+$hndf = fopen("../Apps/$paths/config.xml", "w") or die("Unable to open file!");
 fwrite($hndf, $conf);
 fclose($hndf);
 
