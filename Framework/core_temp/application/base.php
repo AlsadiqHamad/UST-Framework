@@ -4,6 +4,7 @@
 	{
 		var $uri;
 		var $model;
+		var $lib;
 		
 		function __construct($uri)
 		{
@@ -41,6 +42,19 @@
 			require_once('model/'.$model.'.php');
 			$this->$model = new $model;
 		}
+		
+			function loadLib($class)
+		{
+			$file = "system/libraries/".$class.".php";
+				
+			if(!file_exists($file)) die();
+				
+			require_once($file);
+             
+		
+		  return new $class();
+		}
+		
 	}
 
 ?>
