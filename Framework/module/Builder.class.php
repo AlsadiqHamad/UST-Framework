@@ -48,7 +48,7 @@ DB::query("CREATE TABLE `users` (
   PRIMARY KEY (`id`)
 )COLLATE='utf8_general_ci' ");
 
-
+DB::query("insert into users (user,pass)values('test','test')");
 
 /*
 
@@ -102,7 +102,9 @@ public static function generate_form($arr){
   $paths=$_SESSION['step1']['path'];
   $dbs=$_SESSION['step1']['dbn'];
   $data ="";
-
+  $udata="";
+  $showdata="";
+  $showdatah="";
 //get form field and extraxt
     foreach($arr as $keys => $values){
      $fields[]=$values;
@@ -114,22 +116,115 @@ foreach($fields as $field){
        {
      $data .= '<label for="'.$field.'">'.$field.'</label>';
      $data .= '<input type="text" name="'.$field.'"> <br />'; 
+	 
+	 $udata .= '<label for="'.$field.'">'.$field.'</label>';
+     $udata .= '<input type="text" name="'.$field.'" value="<?= $data["'.$field.'"] ?>"> <br />';
+	 
+	 $showdata .= ' <td><?= $field["'.$field.'"] ?></td>';
+     $showdatah .= ' <th>'.$field.'</th>';
       }
  }//end extrat field
 
+//show view form==========================================================================
+$formshow="
+<?php include'head.php'; ?>
+	
+<div class=\"container\">
+<div class=\"row\" align=\"center\">
+<h1>UST Framework</h1>
+<h3> CRUD</h3>
+<table class=\"table table-striped\">
+  <thead>
+    <tr>";
+$formshow.=$showdatah;
+ $formshow.='   </tr>
+     </thead>
+     <tbody>
+    <?php foreach($data as $field): ?>       		
+	 <tr>';
+	   $formshow.= $showdata;
+      
+	   $formshow.='<td><a href=\'<?= PATH?>home/update/<?= $field[\'id\'] ?>\'>
+	   <button class=\'btn btn-info glyphicon\'>UPDATE</button></a></td>
+	  <td><a href=\'<?= PATH?>home/delete/<?= $field[\'id\'] ?>\'><button class=\' btn btn-danger glyphicon glyphicon-trash\'> DELETE</button></a></td>
+	</tr>
 
-//add form==========================================================================
-$form='<form name="form1" method="post" action="rbdb.php">';
+<?php endforeach?>
+
+
+
+</tbody>
+</table>';
+
+$formshow.='</div>
+</div>
+<!-- end show-->
+</div><!-- end container-->
+<script src="<?= PATH?>system/asset/js/jquery.min.js"></script>
+<script src="<?= PATH?>system/asset/js/bootstrap.js"></script>
+</body>
+</html>';
+
+$myfile = fopen("../Apps/$paths/application/view/home.php", "w") or die("Unable to open file!");
+fwrite($myfile, $formshow);
+fclose($myfile);
+
+//add view form==========================================================================
+$form="
+<?php include'head.php'; ?>
+	
+<div class=\"container\">
+<div class=\"row\" align=\"center\">
+<h1>UST Framework</h1>
+<h3> CRUD</h3>
+";
+
+$form.='<form name="form1" method="post" action="<?= PATH?>home/save">';
 $form .=$data;
-$form.='<input type="hidden" value="add" name="add">';
-$form.='<br /><input type="submit" value="send" class="btn btn-primary" /></form>';
 
+$form.='<br /><input type="submit" value="Save" class="btn btn-primary" /></form>';
+$form.='</div>
+</div>
+<!-- end show-->
+</div><!-- end container-->
+<script src="<?= PATH?>system/asset/js/jquery.min.js"></script>
+<script src="<?= PATH?>system/asset/js/bootstrap.js"></script>
+</body>
+</html>';
 
-$myfile = fopen("../Apps/$paths/form.php", "w") or die("Unable to open file!");
+$myfile = fopen("../Apps/$paths/application/view/add.php", "w") or die("Unable to open file!");
 fwrite($myfile, $form);
 fclose($myfile);
+
+////=======================================================================================
+//update view Form 
+$formu="
+<?php include'head.php'; ?>
+	
+<div class=\"container\">
+<div class=\"row\" align=\"center\">
+<h1>UST Framework</h1>
+<h3> CRUD</h3>
+";
+
+$formu.='<form name="form1" method="post" action="<?= PATH?>home/updates/<?= $data["id"] ?>">';
+$formu .=$udata;
+
+$formu.='<br /><input type="submit" value="Save" class="btn btn-primary" /></form>';
+$formu.='</div>
+</div>
+<!-- end show-->
+</div><!-- end container-->
+<script src="<?= PATH?>system/asset/js/jquery.min.js"></script>
+<script src="<?= PATH?>system/asset/js/bootstrap.js"></script>
+</body>
+</html>';
+
+$myfile = fopen("../Apps/$paths/application/view/update.php", "w") or die("Unable to open file!");
+fwrite($myfile, $formu);
+fclose($myfile);
 //===============================================================================
-///generate Form
+///generate Form master data
 
 $form1="<!DOCTYPE html>
 <html lang\"en\">
