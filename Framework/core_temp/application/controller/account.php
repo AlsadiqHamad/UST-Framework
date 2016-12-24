@@ -8,7 +8,7 @@
 		
 		function index()//defult load
 		{
-			$this->loadView('view_account_login');
+			$this->loadView('account/view_account_login');
 		}
 
 		 function login()//login user
@@ -19,12 +19,16 @@
 				{
 				$msg = $this->model_account->check($_POST);
 				}	
-		 header('Location:'.PATH.'account');////////////////////
+				
+				if($msg="yes")
+		       header('Location:'.PATH.'home');////////////////////
+			   else
+			    header('Location:'.PATH.'account');
 		 }
 		 
 		 function reg()//login user
 		 {
-		 $this->loadView('view_account_register');
+		 $this->loadView('account/view_account_register');
 		 }
 		 function register()//register new user
 		 {
@@ -47,7 +51,7 @@
 
 		 function log()
 		 {
-		 $this->loadView('view_account_login');
+		 $this->loadView('account/view_account_login');
 		 }
 	}
 ?>

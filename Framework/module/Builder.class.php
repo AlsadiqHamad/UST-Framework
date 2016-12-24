@@ -165,7 +165,7 @@ $formshow.='</div>
 </body>
 </html>';
 
-$myfile = fopen("../Apps/$paths/application/view/home.php", "w") or die("Unable to open file!");
+$myfile = fopen("../Apps/$paths/application/view/home/home.php", "w") or die("Unable to open file!");
 fwrite($myfile, $formshow);
 fclose($myfile);
 
@@ -192,7 +192,7 @@ $form.='</div>
 </body>
 </html>';
 
-$myfile = fopen("../Apps/$paths/application/view/add.php", "w") or die("Unable to open file!");
+$myfile = fopen("../Apps/$paths/application/view/home/add.php", "w") or die("Unable to open file!");
 fwrite($myfile, $form);
 fclose($myfile);
 
@@ -220,7 +220,7 @@ $formu.='</div>
 </body>
 </html>';
 
-$myfile = fopen("../Apps/$paths/application/view/update.php", "w") or die("Unable to open file!");
+$myfile = fopen("../Apps/$paths/application/view/home/update.php", "w") or die("Unable to open file!");
 fwrite($myfile, $formu);
 fclose($myfile);
 //===============================================================================

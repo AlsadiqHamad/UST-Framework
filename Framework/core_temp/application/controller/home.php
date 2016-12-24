@@ -5,20 +5,28 @@
 		{
 			//$this->loadModel('model_admin');
 			//$this->loadLib('test');
+			if (!isset($_SESSION['conf']['user']))
+			{
+			header('Location:'.PATH.'account');
+			}
 			
 		}
 		
 		function index()
 		{
-		
-		$arr= R::findAll('main');
-		$data['data']=$arr ;
-		$this->loadView('home',$data);
+			$da=$_SESSION['conf']['table'];
+			
+			$arr= R::findAll("$da");
+		   $data['data']=$arr ;
+		   $this->loadView('home/home',$data);
+			
+			
+			
 		}
-           function save()
+           function save()//add process
 		{
-		
-		$main = R::dispense('main');
+		$da=$_SESSION['conf']['table'];
+		$main = R::dispense("$da");
   
         foreach($_POST as $key=>$value){
              $main->$key=$value;
@@ -28,27 +36,22 @@
 		   echo'<script Language="javascript">alert("Recod Saved");</script>';
 		   header('Location:'.PATH.'home');
 		}
-		
-       function show()
-		{
-	    $arr= R::findAll('main');
-		$data['data']=$arr ;
-		$this->loadView('home',$data);
-		}
+	
 		 function update($id)
 		 {
-		 
-		 $se= R::load('main', $id );
+		  $da=$_SESSION['conf']['table'];
+		 $se= R::load("$da", $id );
 		 $data['data']=$se ;
-		$this->loadView('update',$data);
+		$this->loadView('home/update',$data);
 		 }
 
 		  function delete($id)
 		 {
 		 
 		  //R::exec("delete from main WHERE id=$id");
-		 
-		  $se= R::load('main', $id );
+		 $da=$_SESSION['conf']['table'];
+		
+		  $se= R::load("$da", $id );
 		   R::trash($se);
 		   
 		   header('Location:'.PATH.'home/show');
@@ -57,13 +60,13 @@
 		function add()
 		{
 	   
-		$this->loadView('add');
+		$this->loadView('home/add');
 		}
-		function updates($id)
+		function updates($id)//update Process
 		 {
 		 
-		 
-		 $se= R::load('main', $id );
+		  $da=$_SESSION['conf']['table'];
+		 $se= R::load("$da", $id );
 		 
         foreach($_POST as $key=>$value){
              $se->$key=$value;

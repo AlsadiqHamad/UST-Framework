@@ -29,21 +29,22 @@
 
 <!-- logo gov-->
  <nav class="nav navbar navbar-fixed-top navbar-inverse ">
-      <a class="navbar-brand" href="#">UST_Framework</a>
+      <a class="navbar-brand" href="#">USTBOX_Framework</a>
       
       <ul class="nav navbar-nav">
         <li class="nav-item ">
-          <a class="nav-link" href="#"> <span class="sr-only">(current)</span></a>
+          <a class="nav-link " href="#"> <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#"></a>
+		   <li><a href="<?= PATH?>home">Show Data</a></li>
+           <li><a href="<?= PATH?>home/add">Add Data</a></li>
        
 	  </ul>
 	  
 	  <ul class="nav navbar-nav navbar-right">
 		 <?php if (!isset($_SESSION['conf']['user'])):?>
-                        <li><a href="<?= PATH?>account/log">Login</a></li>
-                        <li><a href="<?= PATH?>account/reg">Register</a></li>
+                        
 						<li> <a></a>    </li>
                   <?php else: ?>
                        
