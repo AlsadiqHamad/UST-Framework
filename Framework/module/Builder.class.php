@@ -48,7 +48,7 @@ DB::query("CREATE TABLE `users` (
   PRIMARY KEY (`id`)
 )COLLATE='utf8_general_ci' ");
 
-DB::query("insert into users (user,pass)values('test','test')");
+
 
 /*
 

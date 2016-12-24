@@ -1,26 +1,54 @@
 <?php include'head.php'; ?>
 
-<div class="container"> 
-<div class="row" align="center">
-<h1 class="fontq">login User</h1>
 
-<form  class="form-signin" method="post" action="<?= PATH?>account/login">
-<label for="user" class="sr-only">username</label>
-<input id="user" name="user"   placeholder="User Name" required autofocus  /> <br />
+<!--sdfasdfas -->
+  <div class="container" style="margin-top:40px">
+		<div class="row">
+			<div class="col-sm-6 col-md-4 col-md-offset-4">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<strong> Sign in to continue</strong>
+					</div>
+					<div class="panel-body">
+						<form role="form" action="<?= PATH?>account/login" method="POST">
+							<fieldset>
+								
+								<div class="row">
+									<div class="col-sm-12 col-md-10  col-md-offset-1 ">
+										<div class="form-group">
+											<div class="input-group">
+												<span class="input-group-addon">
+													<i class="glyphicon glyphicon-user"></i>
+												</span> 
+												<input class="form-control" placeholder="Username" name="user" type="text" autofocus>
+											</div>
+										</div>
+										<div class="form-group">
+											<div class="input-group">
+												<span class="input-group-addon">
+													<i class="glyphicon glyphicon-lock"></i>
+												</span>
+												<input class="form-control" placeholder="Password" name="pass" type="password" value="">
+											</div>
+										</div>
+										<div class="form-group">
+										    <input type="hidden" value="log" name="log">
+											<input type="submit" class="btn btn-lg btn-primary btn-block" value="Sign in">
+										</div>
+									</div>
+								</div>
+							</fieldset>
+						</form>
+					</div>
+					<div class="panel-footer ">
+						Don't have an account! <a href="<?= PATH?>account/reg" onClick=""> Sign Up Here </a> 
+					</div>
+                </div>
+			</div>
+		</div>
+	</div><!--sdfasdfas -->
 
-<label for="pass" class="sr-only">password</label>
 
-<input id="pass" name="pass"  placeholder="Password" required /><br />
-<input type="hidden" value="log" name="log">
-
-<button type="submit" class="btn btn-lg btn-primary ">
-   <i class="fa fa-btn fa-sign-in"></i> Login
-  </button><a href="<?= PATH?>admin/log"> Admin</a>
-</form>
-
-</div> 
-<!-- end show-->
-</div><!-- end container-->
 <script src="<?= PATH?>system/asset/js/jquery.min.js"></script>
 <script src="<?= PATH?>system/asset/js/bootstrap.js"></script>
 
