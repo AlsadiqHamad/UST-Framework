@@ -26,11 +26,11 @@
 			    header('Location:'.PATH.'account');
 		 }
 		 
-		 function reg()//login user
+		 function reg()//Register user interface
 		 {
 		 $this->loadView('account/view_account_register');
 		 }
-		 function register()//register new user
+		 function register()//Register user Store
 		 {
 		  $msg ="not registered";
 				if(isset($_POST['reg']))

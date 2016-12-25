@@ -1,9 +1,6 @@
 <?php
 
-
 class Builder{
-
-
 
 public static function create_app_basic($arr){
 
@@ -24,12 +21,8 @@ $_SESSION['step1']=array(
 'dbn'=>$dbn,
 'path'=>$appn
  );
-						
-						
-            
+										          
 DB::query("use $dbn;");
-
-
 DB::query("CREATE TABLE `admin` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `user` varchar(11) DEFAULT NULL,
@@ -49,11 +42,6 @@ DB::query("CREATE TABLE `users` (
 )COLLATE='utf8_general_ci' ");
 
 
-
-/*
-
-
-*/
     $src="core_temp";
     $dst="../Apps/$appn";
     
@@ -303,13 +291,6 @@ fclose($myht);
 return array("msg"=>"<a href='Apps/$paths/generateForm.php'>Click here to add master data</a>");
 
 }
-
-
-
-
-
-
-
 
 
 

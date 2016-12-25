@@ -1,6 +1,4 @@
-<?php
-
-   
+<?php  
 $dbOptions = array(
         'db_host' => 'localhost',
         'db_user' => 'root',
@@ -8,8 +6,4 @@ $dbOptions = array(
         'db_name' => 'coreDB'
 );
  
-    
-    
-
-
 ?>
