@@ -40,12 +40,13 @@ $("#add").click(function (e) {
  
 /////////////////////////////////////////////		
 $('#buildForm').submit(function(){
-
+             $("#msg-01").slideUp(); 
 			$.tzPOST($('#op').val(),$(this).serialize(),function(r){
 				if(r.error)
 				ob_saas.displayMsg(r.error);
 				else
-				$("#buildForm").append(r.msg);
+				$("#msg-01").html(r.msg);
+				$("#msg-01").slideDown();
 			});
 
 return false;

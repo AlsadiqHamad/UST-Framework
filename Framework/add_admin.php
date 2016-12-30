@@ -58,7 +58,7 @@ header("Location:../Apps/$app");
 
 <body >
  <nav class="nav navbar navbar-fixed-top navbar-inverse ">
-      <a class="navbar-brand" href="#">UST_Framework</a>
+      <a class="navbar-brand" href="#">UST-BOX Framework</a>
       
       <ul class="nav navbar-nav">
         <li class="nav-item ">
@@ -81,13 +81,13 @@ header("Location:../Apps/$app");
  <div class="row" align="center">
  
 
-<h1>UST Framework</h1>
+<h1>UST-BOX Framework</h1>
 <h3> Crate Application Admin</h3>
 
                 
 <form action="add_admin.php" method="post" name="frm">
-<label >User Name :</label><input type="text" name="user" /><br />
-<label >PassWord :</label><input type="pass" name="pass"/>
+<label >User Name </label><input type="text" name="user" /><br />
+<label >PassWord </label><input type="pass" name="pass"/>
 <input type="hidden" name="admin" value="admin"/><br />
 <input type="submit" class="btn btn-primary" value="Create Admin"/>
 </form>

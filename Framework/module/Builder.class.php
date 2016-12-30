@@ -10,6 +10,8 @@ $appn=$arr['appname'];
 $defs=$arr['desc'];
 $dev_name=$arr['devname'];
 
+Builder::create_app_folder($appn);//
+
 		DB::query("
 			INSERT INTO `coretable` (`app_name`, `desc`,`dev_name`,`db_name`)
 			VALUES ('$appn','$defs','$dev_name','$dbn')
@@ -45,7 +47,7 @@ DB::query("CREATE TABLE `users` (
     $src="core_temp";
     $dst="../Apps/$appn";
     
-    Builder::create_app_folder($appn);//
+    
     Builder::recurse_copy($src, $dst);//
 
 
@@ -119,7 +121,7 @@ $formshow="
 	
 <div class=\"container\">
 <div class=\"row\" align=\"center\">
-<h1>UST Framework</h1>
+<h1>UST-BOX Framework</h1>
 <h3> CRUD</h3>
 <table class=\"table table-striped\">
   <thead>
@@ -163,7 +165,7 @@ $form="
 	
 <div class=\"container\">
 <div class=\"row\" align=\"center\">
-<h1>UST Framework</h1>
+<h1>UST-BOX Framework</h1>
 <h3> CRUD</h3>
 ";
 
@@ -191,7 +193,7 @@ $formu="
 	
 <div class=\"container\">
 <div class=\"row\" align=\"center\">
-<h1>UST Framework</h1>
+<h1>UST-BOX Framework</h1>
 <h3> CRUD</h3>
 ";
 
@@ -222,7 +224,7 @@ $form1="<!DOCTYPE html>
     <meta name=\"viewport\" content=\"width=device-width, initial-scale=1, shrink-to-fit=no\">
 
 
-    <title>UST_framework</title>
+    <title>UST-BOX Framework</title>
 
     <!-- Bootstrap core CSS -->
 	<link rel=\"stylesheet\" type=\"text/css\" href=\"system/asset/css/bootstrap.min.css\">
@@ -235,11 +237,11 @@ $form1="<!DOCTYPE html>
   <body>
 
     <nav class=\"nav navbar navbar-fixed-top navbar-inverse\">
-     <a class=\"navbar-brand\" href=\"#\">UST_Framework</a>
+     <a class=\"navbar-brand\" href=\"#\">UST-BOX Framework</a>
     </nav>
 <div class=\"container\">
 <div class=\"row\" align=\"center\">
-<h1>UST Framework</h1>
+<h1>UST-BOX Framework</h1>
 <h3> Adding Master Data</h3>
 ";
 
@@ -288,7 +290,7 @@ fclose($myht);
 
 
 
-return array("msg"=>"<a href='Apps/$paths/generateForm.php'>Click here to add master data</a>");
+return array("msg"=>"<a href='Apps/$paths/generateForm.php'><b>Click here to add master data</b></a>");
 
 }
 

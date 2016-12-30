@@ -16,3 +16,11 @@ body {
   padding-bottom: 40px;
   background-color: #eee;
 }
+
+#msg-01 >:link {
+  color:#7b1010;
+   
+  background-color:#f4fbf4;
+  font-family:"Times New Roman", Times, serif;
+  font-Size:20px;
+}
