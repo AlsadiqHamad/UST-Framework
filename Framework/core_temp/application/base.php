@@ -43,7 +43,7 @@
 			$this->$model = new $model;
 		}
 		
-			function loadLib($class)
+		function loadLib($class)
 		{
 			$file = "system/libraries/".$class.".php";
 				
