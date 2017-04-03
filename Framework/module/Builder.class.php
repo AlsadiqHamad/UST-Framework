@@ -275,7 +275,8 @@ fclose($hndf);
 
 
 $myht = fopen("../Apps/$paths/.htaccess", "w") or die("Unable to open file!");
-$txt = "RewriteEngine On
+$txt = "DirectoryIndex index.php
+RewriteEngine On
 
 RewriteBase  /UST-Framework-master/Apps/$paths/
 
