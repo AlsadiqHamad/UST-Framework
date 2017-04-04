@@ -24,25 +24,32 @@
     
 </head>
 <body >
+ <nav class="navbar navbar-inverse navbar-fixed-top app-navbar">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-main">
+                    <span class="sr-only">القائمة</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="#" class="navbar-brand">
+                    <span>UST_BOX</span>
+                </a>
+            </div>
+            <div class="navbar-collapse collapse" id="navbar-collapse-main">
+                <ul class="nav navbar-nav navbar-left">
+                        		   
+                         
 
-<div class="container">
-
-<!-- logo gov-->
- <nav class="nav navbar navbar-fixed-top navbar-inverse ">
-      <a class="navbar-brand" href="#">UST-BOX Framework</a>
-      
-      <ul class="nav navbar-nav">
-        <li class="nav-item ">
-          <a class="nav-link" href="#"> <span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#"></a>
-       
-	  </ul>
-	  
-	  <ul class="nav navbar-nav navbar-right">
+                         
+                </ul>
+				
+				
+				<ul class="nav navbar-nav navbar-right">
 		 <?php if (!isset($_SESSION['conf']['admin'])):?>
                         
+						<li> <a></a>    </li>
                   <?php else: ?>
                        
                         <li class="dropdown">
@@ -55,14 +62,13 @@
 								
                             </ul>
                         </li>
-						 <li >sdfdsdf
-						 </li >
+						
                    <?php endif; ?>
 			 </ul>
-     
-      
+				
+				
+				
+            </div>
+		
+        </div>
     </nav>
-	
-
-
-</div><!--end container  -->

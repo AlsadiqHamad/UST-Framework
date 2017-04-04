@@ -25,24 +25,31 @@
 </head>    
 <body >
 
-<div class="container">
 
-<!-- logo gov-->
- <nav class="nav navbar navbar-fixed-top navbar-inverse ">
-      <a class="navbar-brand" href="#">USTBOX_Framework</a>
-      
-      <ul class="nav navbar-nav">
-        <li class="nav-item ">
-          <a class="nav-link " href="#"> <span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#"></a>
-		   <li><a href="<?= PATH?>home">Show Data</a></li>
-           <li><a href="<?= PATH?>home/add">Add Data</a></li>
-       
-	  </ul>
-	  
-	  <ul class="nav navbar-nav navbar-right">
+ <nav class="navbar navbar-inverse navbar-fixed-top app-navbar">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-main">
+                    <span class="sr-only">القائمة</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="#" class="navbar-brand">
+                    <span>UST_BOX</span>
+                </a>
+            </div>
+            <div class="navbar-collapse collapse" id="navbar-collapse-main">
+                <ul class="nav navbar-nav navbar-left">
+                        		   <li><a href="<?= PATH?>home">Show Data</a></li>
+                                   <li><a href="<?= PATH?>home/add">Add Data</a></li>
+                         
+
+                         
+                </ul>
+				
+				
+				<ul class="nav navbar-nav navbar-right">
 		 <?php if (!isset($_SESSION['conf']['user'])):?>
                         
 						<li> <a></a>    </li>
@@ -58,15 +65,15 @@
 								
                             </ul>
                         </li>
-						 <li >sdfdsdf
-						 </li >
+						
                    <?php endif; ?>
 			 </ul>
-     
-      
+				
+				
+				
+            </div>
+		
+        </div>
     </nav>
-	
 
-
-</div><!--end container  -->
 
